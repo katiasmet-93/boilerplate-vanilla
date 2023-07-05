@@ -1,0 +1,29 @@
+// @font-face {
+// 	font-family: 'Helvetica Neue';
+// 	font-weight: 700;
+// 	font-style: normal;
+// 	font-display: swap;
+// 	src: url('../assets/fonts/HelveticaNeue-CondensedBold.woff') format('woff'),
+// 		url('../assets/fonts/HelveticaNeue-CondensedBold.woff2') format('woff2');
+// }
+
+:root {
+	--font-f-primary: 'Helvetica Neue',
+		Helvetica,
+		Arial,
+		sans-serif;
+
+	--font-w-normal: 400;
+
+	--font-s-base: 16px; 
+    --line-height-base: 1.25;
+	--letter-spacing-base: 0.035em;
+
+	--font-s-xl: 2rem;
+	// --font-s-lg: #{tools.rem(170px)}; 
+	// --font-s-sm: #{tools.rem(20px)}; 
+
+	// @include tools.to("md") {
+		
+	// }
+}

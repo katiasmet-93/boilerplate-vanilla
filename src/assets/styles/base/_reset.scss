@@ -1,0 +1,42 @@
+// =============================================================================
+// Root
+// =============================================================================
+body {
+	min-height: -webkit-fill-available;
+	min-height: 100vh;
+
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+
+	-webkit-text-size-adjust: 100%; // 1
+
+	@screen md {
+		min-height: 100vh;
+		
+	}
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+// =============================================================================
+// Motion
+// =============================================================================
+// Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		// stylelint-disable declaration-no-important
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+		// stylelint-enable declaration-no-important
+	}
+}

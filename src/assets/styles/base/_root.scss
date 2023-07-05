@@ -1,0 +1,21 @@
+:root {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  scrollbar-width: none;
+}
+
+body {
+  color: var(--black-color);
+  font-family: var(--font-f-primary);
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-normal);
+  line-height: var(--line-height-base);
+  -ms-overflow-style: none;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}

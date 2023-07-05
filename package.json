@@ -1,0 +1,112 @@
+{
+  "name": "boilerplate-vanilla",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "npm run lint:scripts && npm run lint:styles",
+    "lint:scripts": "eslint . --ext .js",
+    "lint:styles": "stylelint ./**/*.{css,scss}",
+    "format": "npm run format:scripts && npm run format:styles",
+    "format:scripts": "prettier . --write",
+    "format:styles": "stylelint ./**/*.{css,scss} --fix"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "postcss": "^8.4.24",
+    "prettier": "2.8.8",
+    "sass": "^1.63.6",
+    "stylelint": "^15.10.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "stylelint-prettier": "^3.0.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  },
+  "eslint": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/recommended",
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "always",
+          "groups": [
+            "external",
+            "builtin",
+            "internal",
+            "unknown",
+            "parent",
+            "index",
+            "sibling"
+          ]
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true,
+    "arrowParens": "always",
+    "htmlWhitespaceSensitivity": "strict",
+    "singleAttributePerLine": true,
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "printWidth": 120
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-prettier"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-sass-guidelines",
+      "stylelint-config-prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.scss"
+        ],
+        "customSyntax": "postcss-scss"
+      }
+    ],
+    "rules": {
+      "order/properties-alphabetical-order": true,
+      "prettier/prettier": true,
+      "function-parentheses-space-inside": null,
+      "no-descending-specificity": null,
+      "max-nesting-depth": 2,
+      "selector-max-id": 1
+    }
+  }
+}

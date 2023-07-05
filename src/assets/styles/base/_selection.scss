@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #Selection
+   ========================================================================== */
+::-moz-selection {
+	text-shadow: none;
+
+	background: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+::selection {
+	text-shadow: none;
+
+	background: var(--primary-color);
+	color: var(--secondary-color);
+}
