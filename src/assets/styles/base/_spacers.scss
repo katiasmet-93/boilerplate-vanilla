@@ -7,8 +7,8 @@ $spacer: 10px;
 // Public colors
 // =============================================================================
 :root {
-	--spacer-sm: #{$spacer * 0.5};
-	--spacer: #{$spacer};
-	--spacer-md: #{$spacer * 2};
-	--spacer-lg: #{$spacer * 4};
+  --spacer-sm: #{$spacer * 0.5};
+  --spacer: #{$spacer};
+  --spacer-md: #{$spacer * 2};
+  --spacer-lg: #{$spacer * 4};
 }

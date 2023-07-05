@@ -8,22 +8,19 @@
 // }
 
 :root {
-	--font-f-primary: 'Helvetica Neue',
-		Helvetica,
-		Arial,
-		sans-serif;
+  --font-f-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-	--font-w-normal: 400;
+  --font-w-normal: 400;
 
-	--font-s-base: 16px; 
-    --line-height-base: 1.25;
-	--letter-spacing-base: 0.035em;
+  --font-s-base: 16px;
+  --line-height-base: 1.25;
+  --letter-spacing-base: 0.035em;
 
-	--font-s-xl: 2rem;
-	// --font-s-lg: #{tools.rem(170px)}; 
-	// --font-s-sm: #{tools.rem(20px)}; 
+  --font-s-xl: 2rem;
+  // --font-s-lg: #{tools.rem(170px)};
+  // --font-s-sm: #{tools.rem(20px)};
 
-	// @include tools.to("md") {
-		
-	// }
+  // @include tools.to("md") {
+
+  // }
 }

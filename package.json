@@ -1,7 +1,5 @@
 {
   "name": "boilerplate-vanilla",
-  "private": true,
-  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -17,13 +15,11 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-import": "^2.27.5",
     "postcss": "^8.4.24",
     "prettier": "2.8.8",
     "sass": "^1.63.6",
     "stylelint": "^15.10.0",
-    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-sass-guidelines": "^10.0.0",
     "stylelint-prettier": "^3.0.0",
@@ -31,10 +27,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   },
-  "eslint": {
-    "plugins": [
-      "prettier"
-    ],
+  "eslintConfig": {
     "extends": [
       "eslint:recommended",
       "plugin:import/recommended",
@@ -45,10 +38,9 @@
       "node": true
     },
     "parserOptions": {
-        "sourceType": "module"
+      "sourceType": "module"
     },
     "rules": {
-      "prettier/prettier": "error",
       "import/order": [
         "error",
         {
@@ -75,7 +67,6 @@
     "quoteProps": "as-needed",
     "jsxSingleQuote": false,
     "trailingComma": "es5",
-    "jsxBracketSameLine": true,
     "arrowParens": "always",
     "htmlWhitespaceSensitivity": "strict",
     "singleAttributePerLine": true,
@@ -89,8 +80,7 @@
     ],
     "extends": [
       "stylelint-config-recommended",
-      "stylelint-config-sass-guidelines",
-      "stylelint-config-prettier"
+      "stylelint-config-sass-guidelines"
     ],
     "overrides": [
       {
@@ -100,13 +90,19 @@
         "customSyntax": "postcss-scss"
       }
     ],
+    "ignoreFiles": [
+      "dist/**/*",
+      "public/**/*"
+    ],
     "rules": {
-      "order/properties-alphabetical-order": true,
-      "prettier/prettier": true,
       "function-parentheses-space-inside": null,
       "no-descending-specificity": null,
       "max-nesting-depth": 2,
-      "selector-max-id": 1
+      "selector-max-id": 1,
+      "color-hex-length": "long",
+      "scss/at-import-no-partial-leading-underscore": null,
+      "scss/no-global-function-names": null,
+      "scss/at-function-pattern": null
     }
   }
 }

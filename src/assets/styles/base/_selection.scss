@@ -1,16 +1,14 @@
-/* ==========================================================================
-   #Selection
-   ========================================================================== */
+/* stylelint-disable */
 ::-moz-selection {
-	text-shadow: none;
+  text-shadow: none;
 
-	background: var(--primary-color);
-	color: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 ::selection {
-	text-shadow: none;
+  text-shadow: none;
 
-	background: var(--primary-color);
-	color: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }

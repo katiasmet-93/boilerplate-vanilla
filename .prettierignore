@@ -1,0 +1,12 @@
+.history
+.husky
+.vscode
+.vercel
+.github
+coverage
+dist
+package-lock.json
+public
+node_modules
+vite.config.ts
+tailwind.config.js
