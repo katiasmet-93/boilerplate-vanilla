@@ -1,17 +1,50 @@
 import express from 'express';
-import { engine } from 'express-handlebars';
+import { create } from 'express-handlebars';
 import 'dotenv/config';
 import sitemap from 'express-sitemap';
 import ViteExpress from 'vite-express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const port = 3000;
 const pagesFolder = 'pages/';
 const mode = process.env.NODE_ENV || 'development';
+const isProd = mode === 'production';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const hbs = create({
+  helpers: {
+    ifeq(a, b, options) {
+      if (a == b) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    },
+    ifnoteq(a, b, options) {
+      if (a != b) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    },
+  },
+});
 
-app.engine('handlebars', engine());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
+const getDefaultData = async () => {
+  const data = await fs.promises.readFile(`${__dirname}/dist/manifest.json`, 'utf8');
+  const manifest = JSON.parse(data);
+
+  return {
+    isProd,
+    css: manifest['src/main.css'].file,
+    js: manifest['src/main.js'].file,
+  };
+};
 
 const getData = async (url) => {
   const data = await fetch(`${process.env.API_BASE_URL}${url}`, {
@@ -64,16 +97,20 @@ const generateSitemap = async () => {
 
 app.get('/', async (req, res) => {
   const data = await getData('/videos');
+  const defaultData = await getDefaultData();
 
   res.render(`${pagesFolder}home`, {
+    ...defaultData,
     videos: data?.data,
   });
 });
 
 app.get('/video/:slug', async (req, res) => {
   const data = await getData(`/videos/search?slug=${req.params.slug}`);
+  const defaultData = await getDefaultData();
 
   res.render(`${pagesFolder}detail`, {
+    ...defaultData,
     ...data?.data,
   });
 });
@@ -83,11 +120,7 @@ app.get('/sitemap.xml', async (req, res) => {
   sitemap.XMLtoWeb(res);
 });
 
-if (mode === 'production') {
-  app.enable('view cache');
-  ViteExpress.config({ mode: 'production' });
-}
-
+ViteExpress.config({ mode });
 ViteExpress.listen(app, port, () => {
   console.log(`Server is listening to http://localhost:${port}`);
 });
