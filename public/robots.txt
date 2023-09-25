@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://TODO.com
+
+# Sitemaps
+Sitemap: https://TODO/sitemap.xml

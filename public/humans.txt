@@ -1,0 +1,12 @@
+/* ABOUT US */
+
+Website developed by Katia Smet. Creative developer.
+Email: hello@katiasmet.com
+
+Website   : https://katiasmet.com
+Twitter   : https://twitter.com/katiasmet
+Linkedin  : https://www.linkedin.com/in/KatiaSmet/
+Codepen   : https://codepen.io/katiasmet
+Github    : https://github.com/katiasmet
+Behance   : https://www.behance.net/KatiaSmet
+Dribbble  : https://dribbble.com/KatiaSmet

@@ -6,6 +6,15 @@
   scrollbar-width: none;
 }
 
+html {
+  font-size: calc(100vw / 750 * 10);
+  min-height: 100svh;
+
+  @screen lg {
+    font-size: calc(100vw / 1920 * 10);
+  }
+}
+
 body {
   color: var(--black-color);
   font-family: var(--font-f-primary);
@@ -17,6 +26,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
+  background: red;
 }
 
 svg {

@@ -1,3 +1,5 @@
+Info: This boilerplate uses a vanilla setup with express, handlebars and vite.
+
 # PROJECT NAME
 
 Project info
