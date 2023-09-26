@@ -1,0 +1,11 @@
+{% extends './layouts/base.html' %} {% block main %}
+<h2>Videos</h2>
+
+<ul>
+  {% for video in videos %}
+  <li>
+    <a href="/video/{{video.slug}}"> {{video.title}} </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

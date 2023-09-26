@@ -2,10 +2,10 @@
   "name": "boilerplate-vanilla",
   "author": "Katia Smet",
   "scripts": {
-    "dev": "nodemon app.mjs",
+    "dev": "eleventy --config=.eleventy.js --serve",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build",
-    "build:server": "NODE_ENV=production node app.js",
+    "build:server": "eleventy --config=.eleventy.js",
     "preview": "vite preview",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint . --ext .js",
@@ -15,13 +15,13 @@
     "format:styles": "stylelint ./**/*.{css,scss} --fix"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-vite": "^4.0.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "express-handlebars": "^7.1.2",
-    "express-sitemap": "^1.8.0",
-    "express-sitemap-xml": "^3.0.1",
+    "html-minifier": "^4.0.0",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.24",
     "prettier": "^3.0.3",
@@ -34,9 +34,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "vite-express": "^0.10.0"
+    "dotenv": "^16.3.1"
   },
   "eslintConfig": {
     "extends": [

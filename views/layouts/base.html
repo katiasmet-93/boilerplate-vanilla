@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Example App</title>
+  </head>
+  <body>
+    {% include '../partials/header.html' %} {% block main %} {% endblock %}
+
+    <script
+      type="module"
+      src="{{ '/app/main.js' | url }}"></script>
+  </body>
+</html>

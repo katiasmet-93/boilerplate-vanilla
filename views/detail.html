@@ -1,0 +1,11 @@
+---
+pagination:
+  data: details
+  size: 1
+  alias: video
+permalink: 'video/{{ video.slug }}/'
+---
+
+{% extends './layouts/base.html' %} {% block main %}
+<h2>{{video.title}}</h2>
+{% endblock %}
