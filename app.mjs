@@ -121,6 +121,11 @@ app.get('/sitemap.xml', async (req, res) => {
 });
 
 ViteExpress.config({ mode });
-ViteExpress.listen(app, port, () => {
-  console.log(`Server is listening to http://localhost:${port}`);
-});
+
+if (!isProd) {
+  ViteExpress.listen(app, port, () => {
+    console.log(`Server is listening to http://localhost:${port}`);
+  });
+}
+
+export default app;
